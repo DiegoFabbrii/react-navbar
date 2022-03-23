@@ -1,0 +1,49 @@
+.container {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn,
+.btn::before,
+.btn::after {
+    width: 20px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    transition: 0.3s;
+}
+
+.btn {
+    position: relative;
+}
+
+.btn::before,
+.btn::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+}
+
+.btn::before {
+    transform: translateY(-8px);
+}
+
+.btn::after {
+    transform: translateY(8px);
+}
+
+.btn.menuOpen {
+    background-color: transparent;
+}
+
+.btn.menuOpen.btn::before {
+    transform: rotate(45deg);
+}
+
+.btn.menuOpen.btn::after {
+    transform: rotate(-45deg);
+}

@@ -1,0 +1,15 @@
+.menuList li {
+    padding: 10px;
+    /* width: 90%; */
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.menuList li:hover {
+    background-color: #424f5e;
+}
+
+.menuList a {
+    color: #f7f7f7;
+    display: block;
+}
