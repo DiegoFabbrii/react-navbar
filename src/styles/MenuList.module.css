@@ -1,15 +1,18 @@
-.menuList li {
+.menuList {
+    width: 100%;
+}
+
+.itemList {
+    color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
     padding: 10px;
-    /* width: 90%; */
     border-radius: 10px;
     transition: 0.3s;
 }
 
-.menuList li:hover {
+.itemList:hover {
     background-color: #424f5e;
-}
-
-.menuList a {
-    color: #f7f7f7;
-    display: block;
 }

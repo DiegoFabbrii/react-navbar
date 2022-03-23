@@ -1,25 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+import { NavbarContext } from "../contexts/navbarContext";
 import { Link } from "react-router-dom";
+import { navbarData } from "./navbarData";
 import style from "../../styles/MenuList.module.css";
 
 function MenuList() {
+    const { menuHandler } = useContext(NavbarContext);
+
     return (
-        <ul className={style.menuList}>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
-
-            <li>
-                <Link to="/produtos">Produtos</Link>
-            </li>
-
-            <li>
-                <Link to="/sobre">Sobre</Link>
-            </li>
-
-            <li>
-                <Link to="/contatos">Contatos</Link>
-            </li>
+        <ul className={style.menuList} onClick={() => menuHandler()}>
+            {navbarData.map((item, index) => {
+                return (
+                    <li key={index}>
+                        <Link to={item.path} className={style.itemList}>
+                            {item.icon}
+                            {item.title}
+                        </Link>
+                    </li>
+                );
+            })}
         </ul>
     );
 }
